@@ -16,7 +16,7 @@ class ReviewsController extends Controller
                 'name' => 'required',
                 'email' => 'required',
                 'message' => 'required',
-                'rating' => 'required',
+                'rating' => 'required|integer',
             ]
         );
         $response =    Reviews::create($data);

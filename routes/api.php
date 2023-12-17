@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::post('addreview', [
+    ReviewsController::class,
+    'store'
+]);
 
-// Route::get('alltestdata', [
-//     TestController::class,
-//     'index'
-// ]);
-
-
+Route::get('allreviews', [
+    ReviewsController::class,
+    'index'
+]);
