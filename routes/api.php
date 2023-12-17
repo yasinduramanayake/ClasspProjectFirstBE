@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -22,5 +23,7 @@ use Illuminate\Support\Facades\Route;
 //     TestController::class,
 //     'index'
 // ]);
-
-
+Route::post("addcategory",[CategoryController::class,'store',]);
+Route::get("getallcategory",[CategoryController::class,'getallcategory',]);
+Route::put("updatecategory/{id}",[CategoryController::class,'updatecategory',]);
+Route::delete("deletecategory/{id}",[CategoryController::class,'deletecategory',]);
