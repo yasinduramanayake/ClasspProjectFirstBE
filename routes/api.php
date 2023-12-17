@@ -27,3 +27,5 @@ Route::post("addcategory",[CategoryController::class,'store',]);
 Route::get("getallcategory",[CategoryController::class,'getallcategory',]);
 Route::put("updatecategory/{id}",[CategoryController::class,'updatecategory',]);
 Route::delete("deletecategory/{id}",[CategoryController::class,'deletecategory',]);
+
+

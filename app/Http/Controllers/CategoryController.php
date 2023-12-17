@@ -42,12 +42,12 @@ class CategoryController extends Controller
             ]
         );
 
-        dd($data);
-        // $updatecategory = $id->update($data);
-        // return response()->json(['data'=> $updatecategory]);
+        $updatecategory = $id->update($data);
+        return response()->json(['data'=> $updatecategory]);
 
     }
 
+    // delete category
     public function deletecategory(Category $id){
 
         $deletecategory = $id->delete();
