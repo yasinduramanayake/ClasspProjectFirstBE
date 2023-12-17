@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,16 +19,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::post('addreview', [
+    ReviewsController::class,
+    'store'
+]);
 
-// Route::get('alltestdata', [
-//     TestController::class,
-//     'index'
-// ]);
-Route::post('addproduct',[ProductController::class,'add']);
-
-Route::put('updateproduct/{id}',[ProductController::class,'update']);
-
-Route::get('allproduct/',[ProductController::class,'index']);
-
-Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
-
+Route::get('allreviews', [
+    ReviewsController::class,
+    'index'
+]);
