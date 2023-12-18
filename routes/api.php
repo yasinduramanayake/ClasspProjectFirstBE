@@ -23,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 //     TestController::class,
 //     'index'
 // ]);
+
+// adding routes 
+
 Route::post('addproduct',[ProductController::class,'add']);
 
 Route::put('updateproduct/{id}',[ProductController::class,'update']);
