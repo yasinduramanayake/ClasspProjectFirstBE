@@ -28,3 +28,18 @@ Route::get('allreviews', [
     ReviewsController::class,
     'index'
 ]);
+// Route::get('alltestdata', [
+//     TestController::class,
+//     'index'
+// ]);
+
+// adding routes 
+
+Route::post('addproduct',[ProductController::class,'add']);
+
+Route::put('updateproduct/{id}',[ProductController::class,'update']);
+
+Route::get('allproduct/',[ProductController::class,'index']);
+
+Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
+
