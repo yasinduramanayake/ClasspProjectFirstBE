@@ -36,16 +36,14 @@ Route::get('allreviews', [
 
 // adding routes 
 
-Route::post('addproduct',[ProductController::class,'add']);
+Route::post('addproduct', [ProductController::class, 'add']);
 
-Route::put('updateproduct/{id}',[ProductController::class,'update']);
+Route::put('updateproduct/{id}', [ProductController::class, 'update']);
 
-Route::get('allproduct/',[ProductController::class,'index']);
+Route::get('allproduct/', [ProductController::class, 'index']);
 
-Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
-Route::post("addcategory",[CategoryController::class,'store',]);
-Route::get("getallcategory",[CategoryController::class,'getallcategory',]);
-Route::put("updatecategory/{id}",[CategoryController::class,'updatecategory',]);
-Route::delete("deletecategory/{id}",[CategoryController::class,'deletecategory',]);
-
-
+Route::delete('deleteproduct/{id}/', [ProductController::class, 'delete']);
+Route::post("addcategory", [CategoryController::class, 'store',]);
+Route::get("getallcategory", [CategoryController::class, 'getallcategory',]);
+Route::put("updatecategory/{id}", [CategoryController::class, 'updatecategory',]);
+Route::delete("deletecategory/{id}", [CategoryController::class, 'deletecategory',]);
