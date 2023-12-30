@@ -27,3 +27,14 @@ Route::get('allreviews', [
     ReviewsController::class,
     'index'
 ]);
+
+Route::put('updatereview/{id}', [
+    ReviewsController::class,
+    'update'
+]);
+
+Route::put('deletereview/{id}', [
+    ReviewsController::class,
+    'destroy'
+]);
+
