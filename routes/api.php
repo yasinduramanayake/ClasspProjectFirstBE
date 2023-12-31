@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+
+use App\Http\Controllers\OrderController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,4 +37,9 @@ Route::post('addusers',[
 Route::get('allusers',[
     UsersController::class,
     'index',
+]);
+
+Route::post('addorder',[
+    OrderController::class,
+    'store',
 ]);
