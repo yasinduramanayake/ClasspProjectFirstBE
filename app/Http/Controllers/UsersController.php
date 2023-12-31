@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Repositary\testinterface;
+use App\UserRepositary\testinterface;
 use App\Http\Controllers\Exception;
 use Exception as GlobalException;
 
