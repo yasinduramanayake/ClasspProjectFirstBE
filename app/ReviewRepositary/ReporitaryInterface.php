@@ -3,6 +3,7 @@
 namespace App\ReviewRepositary;
 
 
+
 interface  ReporitaryInterface
 {
     public function store($data);

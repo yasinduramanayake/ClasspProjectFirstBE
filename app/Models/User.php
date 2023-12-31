@@ -17,9 +17,6 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-
-     protected $primary_key='id';
-     protected $table='users';
     protected $fillable = [
         'name',
         'email',

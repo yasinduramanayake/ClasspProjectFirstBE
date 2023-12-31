@@ -1,12 +1,9 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UsersController;
-
 use App\Http\Controllers\OrderController;
 
 
@@ -35,6 +32,7 @@ Route::get('allreviews', [
     'index'
 ]);
 
+
 // adding routes 
 
 Route::post('addproduct', [ProductController::class, 'add']);
@@ -59,7 +57,6 @@ Route::get('allusers',[
     'index',
 ]);
 
-<<<<<<< HEAD
 
 Route::put('updatereview/{id}', [
     ReviewsController::class,
@@ -71,10 +68,8 @@ Route::put('deletereview/{id}', [
     'destroy'
 ]);
 
-
-=======
 Route::post('addorder',[
     OrderController::class,
     'store',
 ]);
->>>>>>> sheyan
+
