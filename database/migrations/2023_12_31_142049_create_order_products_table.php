@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('order_products', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('reference_id');
-            $table->foreignId('user_id')->constrained('users');
+            $table->integer('order_id');
+            $table->integer('product_id');
+            $table->integer('quantity');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
