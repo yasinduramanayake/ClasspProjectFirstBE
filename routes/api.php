@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UsersController;
+
+use App\Http\Controllers\OrderController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -55,6 +59,7 @@ Route::get('allusers',[
     'index',
 ]);
 
+<<<<<<< HEAD
 
 Route::put('updatereview/{id}', [
     ReviewsController::class,
@@ -67,3 +72,9 @@ Route::put('deletereview/{id}', [
 ]);
 
 
+=======
+Route::post('addorder',[
+    OrderController::class,
+    'store',
+]);
+>>>>>>> sheyan
