@@ -4,14 +4,13 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\ReviewRepositary\ReporitaryInterface;
+use App\ReviewRepositary\RepositaryImplementation;
 
-<<<<<<< HEAD
 use App\CategoryRepository\categoryinterface;
 use App\CategoryRepository\categoryimplementation;
-=======
 use App\Repositary\testinterface;
 use App\Repositary\testimplementation;
->>>>>>> sheyan
 
 
 class AppServiceProvider extends ServiceProvider
@@ -20,14 +19,10 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      */
     public function register(): void
-    {
-<<<<<<< HEAD
-        //
+    {   
         $this->app->bind(categoryinterface::class, categoryimplementation::class);
-=======
-        $this->app->bind(testinterface::class,testimplementation::class);
-        
->>>>>>> sheyan
+        $this->app->bind(testinterface::class, testimplementation::class);
+        $this->app->bind(ReporitaryInterface::class, RepositaryImplementation::class);
     }
 
     /**

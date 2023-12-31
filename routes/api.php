@@ -4,11 +4,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\ReviewsController;
-=======
 use App\Http\Controllers\UsersController;
->>>>>>> sheyan
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,14 +30,9 @@ Route::get('allreviews', [
     ReviewsController::class,
     'index'
 ]);
-// Route::get('alltestdata', [
-//     TestController::class,
-//     'index'
-// ]);
 
 // adding routes 
 
-<<<<<<< HEAD
 Route::post('addproduct', [ProductController::class, 'add']);
 
 Route::put('updateproduct/{id}', [ProductController::class, 'update']);
@@ -52,7 +44,7 @@ Route::post("addcategory", [CategoryController::class, 'store',]);
 Route::get("getallcategory", [CategoryController::class, 'getallcategory',]);
 Route::put("updatecategory/{id}", [CategoryController::class, 'updatecategory',]);
 Route::delete("deletecategory/{id}", [CategoryController::class, 'deletecategory',]);
-=======
+
 Route::post('addusers',[
     UsersController::class,
     'store',
@@ -62,4 +54,16 @@ Route::get('allusers',[
     UsersController::class,
     'index',
 ]);
->>>>>>> sheyan
+
+
+Route::put('updatereview/{id}', [
+    ReviewsController::class,
+    'update'
+]);
+
+Route::put('deletereview/{id}', [
+    ReviewsController::class,
+    'destroy'
+]);
+
+
