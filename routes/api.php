@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +25,12 @@ use Illuminate\Support\Facades\Route;
 // ]);
 
 
+Route::post('addusers',[
+    UsersController::class,
+    'store',
+]); 
+
+Route::get('allusers',[
+    UsersController::class,
+    'index',
+]);
