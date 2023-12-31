@@ -17,6 +17,7 @@ class ProductController extends Controller
                 'price' => 'required|integer',
                 'description' => 'string',
                 'imageurl' => 'string',
+                'category_id' => 'required|integer'
             ]
         );
 

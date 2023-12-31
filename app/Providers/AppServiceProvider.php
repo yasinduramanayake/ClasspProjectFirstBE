@@ -13,16 +13,20 @@ use App\Repositary\testinterface;
 use App\Repositary\testimplementation;
 
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
     public function register(): void
-    {   
+    {
         $this->app->bind(categoryinterface::class, categoryimplementation::class);
         $this->app->bind(testinterface::class, testimplementation::class);
         $this->app->bind(ReporitaryInterface::class, RepositaryImplementation::class);
+
+        //
+        $this->app->bind(categoryinterface::class, categoryimplementation::class);
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\CategoryRepository\categoryinterface;
 use Exception;
+
 use Illuminate\Validation\ValidationException;
 
 class CategoryController extends Controller
@@ -90,3 +91,5 @@ class CategoryController extends Controller
 
 
 }
+
+
