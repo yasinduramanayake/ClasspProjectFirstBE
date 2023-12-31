@@ -5,26 +5,23 @@
 namespace App\CategoryRepository;
 use App\CategoryRepository\categoryinterface;
 use App\Models\Category;
-// use App\Helper\helper;
+use App\Helper\helper;
 
 
-
-// extends dammama dannawa inheritance parent kiylaa
-// "implement eken interface eken use akrnawakiyala"
 class categoryimplementation  implements categoryinterface{
 
     public function store($data){
-        // $getarray = helper::insertCategories();
-        // // dd( $getarray);
-        // foreach($getarray as $arryobject){
-        //     $createtable=   Category::create(
-        //         [
-        //             'name' => $arryobject['name'],
-        //             'description' => $arryobject['description']
-        //         ]
-        //     );
+        $getarray = helper::insertCategories();
+        // dd( $getarray);
+        foreach($getarray as $arryobject){
+            $createtable=   Category::create(
+                [
+                    'name' => $arryobject['name'],
+                    'description' => $arryobject['description']
+                ]
+            );
 
-        // }
+        }
         $createtable = Category::create($data);
         return  $createtable;
     }
