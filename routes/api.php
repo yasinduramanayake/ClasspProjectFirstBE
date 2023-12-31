@@ -68,8 +68,6 @@ Route::put('deletereview/{id}', [
     'destroy'
 ]);
 
-<<<<<<< HEAD
-=======
 // adding routes
 
 Route::post('addproduct',[ProductController::class,'add']);
@@ -80,8 +78,6 @@ Route::get('allproduct/',[ProductController::class,'index']);
 
 Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
 
-=======
->>>>>>> 7eab8903f3c052f913d1d76be0ec41b5afff2e5f
 Route::post('addorder',[
     OrderController::class,
     'store',
