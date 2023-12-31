@@ -9,7 +9,6 @@ use Exception;
 
 class ReviewsController extends Controller
 {
-
     protected $repositaryinterface;
 
     public function __construct(ReporitaryInterface $repositaryinterface)
