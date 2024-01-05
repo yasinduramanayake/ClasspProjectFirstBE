@@ -1,15 +1,14 @@
 <?php
 
-namespace App\ProductRepository;
+namespace App\UserRepository;
 
-use App\Models\Product;
+use App\Models\User;
 
-class productimplementation implements productinterface
-{
+class userimplementation implements userinterface{
 
     public function add($data)
     {
-        return $createdata = Product::create($data);
+        return $createdata = User::create($data);
     }
 
     public function update($id, $data)
@@ -19,11 +18,12 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        return $alldata = User::all();
     }
 
     public function delete($id)
     {
         return $deletetdata = $id->delete();
     }
+    
 }

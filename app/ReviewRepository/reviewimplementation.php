@@ -1,15 +1,15 @@
 <?php
 
-namespace App\ProductRepository;
+namespace App\ReviewRepository;
 
-use App\Models\Product;
+use App\Models\Reviews;
 
-class productimplementation implements productinterface
+class reviewimplementaion implements reviewinterface
 {
 
     public function add($data)
     {
-        return $createdata = Product::create($data);
+        return $createdata = Reviews::create($data);
     }
 
     public function update($id, $data)
@@ -19,7 +19,7 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        return $alldata = Reviews::all();
     }
 
     public function delete($id)

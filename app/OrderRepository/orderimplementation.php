@@ -1,15 +1,15 @@
 <?php
 
-namespace App\ProductRepository;
+namespace App\OrderRepository;
 
-use App\Models\Product;
+use App\Models\Orders;
 
-class productimplementation implements productinterface
+class orderimplementation implements orderinterface
 {
 
     public function add($data)
     {
-        return $createdata = Product::create($data);
+        return $createdata = Orders::create($data);
     }
 
     public function update($id, $data)
@@ -19,7 +19,7 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        return $alldata = Orders::all();
     }
 
     public function delete($id)

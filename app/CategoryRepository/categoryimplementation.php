@@ -1,15 +1,15 @@
 <?php
 
-namespace App\ProductRepository;
+namespace App\CategoryRepository;
 
-use App\Models\Product;
+use App\Models\Category;
 
-class productimplementation implements productinterface
+class categoryimplementation implements categoryinterface
 {
 
     public function add($data)
     {
-        return $createdata = Product::create($data);
+        return $createdata = Category::create($data);
     }
 
     public function update($id, $data)
@@ -19,7 +19,7 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        return $alldata = Category::all();
     }
 
     public function delete($id)
