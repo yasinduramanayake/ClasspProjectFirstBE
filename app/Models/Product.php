@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
   
     protected $table = 'products';
@@ -15,4 +16,8 @@ class Product extends Model
 
 
     Protected $fillable = ['name','price','description','imageurl','category_id'];
+=======
+    protected $table ="products";
+    protected $fillable = ['name', 'price', 'description', 'imageurl'];
+>>>>>>> origin/darshana
 }

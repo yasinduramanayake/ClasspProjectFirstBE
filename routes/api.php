@@ -1,5 +1,13 @@
 <?php
 
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
+>>>>>>> origin/darshana
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
@@ -79,8 +87,51 @@ Route::get('allproduct/',[ProductController::class,'index']);
 
 Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
 
+<<<<<<< HEAD
 Route::post('addorder',[
     OrderController::class,
     'store',
 ]);
+=======
+
+Route::post('addcategory',[CategoryController::class,'add']);
+
+Route::put('updatecategory/{id}',[CategoryController::class,'update']);
+
+Route::get('allcategory/',[CategoryController::class,'index']);
+
+Route::delete('deletecategory/{id}/',[CategoryController::class,'delete']);
+
+
+Route::post('addreview',[ReviewController::class,'add']);
+
+Route::put('updatereview/{id}',[ReviewController::class,'update']);
+
+Route::get('allreview/',[ReviewController::class,'index']);
+
+Route::delete('deletereview/{id}/',[ReviewController::class,'delete']);
+
+
+Route::post('addorder',[OrderController::class,'add']);
+
+Route::put('updateorder/{id}',[OrderController::class,'update']);
+
+Route::get('allorder/',[OrderController::class,'index']);
+
+Route::delete('deleteorder{id}/',[OrderController::class,'delete']);
+
+
+Route::post('adduser',[UserController::class,'add']);
+
+Route::put('updateuser/{id}',[UserController::class,'update']);
+
+Route::get('alluser/',[UserController::class,'index']);
+
+Route::delete('deleteuser{id}/',[UserController::class,'delete']);
+
+
+
+
+
+>>>>>>> origin/darshana
 

@@ -10,6 +10,4 @@ interface categoryinterface
     public function getallcategory();
     public function updatecategory($id, $data);
     public function deletecategory($id);
-   
-
 }
