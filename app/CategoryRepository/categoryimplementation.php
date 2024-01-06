@@ -26,6 +26,8 @@ class categoryimplementation  implements categoryinterface{
         return  $createtable;
     }
     public function getallcategory(){
+
+        // return $alldata = Product::with('category')->get();
         $getallcategory = Category::all();
         return $getallcategory;
     }

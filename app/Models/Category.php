@@ -17,4 +17,10 @@ class Category extends Model
         'description'
 
     ];
+
+
+        public function products(){
+            $this->hasMany('App\Models\Product' , 'category_id');
+        }
+    
 }
