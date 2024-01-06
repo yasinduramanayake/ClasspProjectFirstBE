@@ -19,7 +19,8 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        //return $alldata = Product::all();
+        return $alldata = Product::with('category')->get();
     }
 
     public function delete($id)
