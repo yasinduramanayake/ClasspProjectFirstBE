@@ -7,16 +7,17 @@ use App\Models\Orders;
 
 class OrderController extends Controller
 {
-    public function store(Request $request){
-        $data=$request->validate(
+    public function store(Request $request)
+    {
+        $data = $request->validate(
             [
                 'status' => 'required',
                 'reference_id' => 'required',
                 'user_id' => 'required'
             ]
-            );
-    
-          $createddata= Orders::create($data);
-          return response()->json(['data'=>$createddata]);
-      }
+        );
+
+        $createddata = Orders::create($data);
+        return response()->json(['data' => $createddata]);
+    }
 }
