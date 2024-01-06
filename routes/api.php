@@ -1,9 +1,17 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\UsersController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,23 +27,67 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::post('addreview', [
+    ReviewsController::class,
+    'store'
+]);
 
-// Route::get('alltestdata', [
-//     TestController::class,
-//     'index'
-// ]);
-Route::post("addcategory",[CategoryController::class,'store',]);
-Route::get("getallcategory",[CategoryController::class,'getallcategory',]);
-Route::put("updatecategory/{id}",[CategoryController::class,'updatecategory',]);
-Route::delete("deletecategory/{id}",[CategoryController::class,'deletecategory',]);
+Route::get('allreviews', [
+    ReviewsController::class,
+    'index'
+]);
+
 
 // adding routes
 
-Route::post('addproduct',[ProductController::class,'add']);
+Route::post('addproduct', [ProductController::class, 'add']);
 
-Route::put('updateproduct/{id}',[ProductController::class,'update']);
+Route::put('updateproduct/{id}', [ProductController::class, 'update']);
 
-Route::get('allproduct/',[ProductController::class,'index']);
+Route::get('allproduct', [ProductController::class, 'index']);
 
-Route::delete('deleteproduct/{id}/',[ProductController::class,'delete']);
+Route::delete('deleteproduct/{id}/', [ProductController::class, 'delete']);
+
+
+Route::post("addcategory", [CategoryController::class, 'store',]);
+Route::get("getallcategory", [CategoryController::class, 'getallcategory',]);
+Route::put("updatecategory/{id}", [CategoryController::class, 'updatecategory',]);
+Route::delete("deletecategory/{id}", [CategoryController::class, 'deletecategory',]);
+
+Route::post('addusers',[
+    UsersController::class,
+    'store',
+]);
+
+Route::get('allusers',[
+    UsersController::class,
+    'index',
+]);
+
+
+Route::put('updatereview/{id}', [
+    ReviewsController::class,
+    'update'
+]);
+
+Route::put('deletereview/{id}', [
+    ReviewsController::class,
+    'destroy'
+]);
+
+
+Route::post('addorder',[OrderController::class,'store']);
+
+Route::put('updateorder/{id}',[OrderController::class,'update']);
+
+Route::get('allorder/',[OrderController::class,'index']);
+
+Route::delete('deleteorder{id}/',[OrderController::class,'delete']);
+
+
+
+
+
+
+
 

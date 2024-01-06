@@ -2,10 +2,16 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
+use App\ProductRepository\productinterface;
+use App\ProductRepository\productimplementation;
 use App\CategoryRepository\categoryinterface;
 use App\CategoryRepository\categoryimplementation;
+use App\OrderRepository\orderinterface;
+use App\OrderRepository\orderimplementation;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+use App\ReviewRepositary\ReporitaryInterface;
+use App\ReviewRepositary\RepositaryImplementation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,10 +20,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+
+        $this->app->bind(categoryinterface::class, categoryimplementation::class);
+
+        $this->app->bind(ReporitaryInterface::class, RepositaryImplementation::class);
+
         //
         $this->app->bind(categoryinterface::class, categoryimplementation::class);
-    }
 
+        $this->app->bind(productinterface::class, productimplementation::class);
+        $this->app->bind(categoryinterface::class, categoryimplementation::class);
+        $this->app->bind(orderinterface::class, orderimplementation::class);
+    }
     /**
      * Bootstrap any application services.
      */
