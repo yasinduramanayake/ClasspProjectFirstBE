@@ -7,7 +7,7 @@ namespace App\CategoryRepository;
 use App\CategoryRepository\categoryinterface;
 use App\Models\Category;
 use App\Helper\helper;
-
+use Spatie\QueryBuilder\QueryBuilder;
 
 class categoryimplementation  implements categoryinterface
 {
@@ -32,9 +32,13 @@ class categoryimplementation  implements categoryinterface
         // return $alldata = Product::with('category')->get();
     public function getallcategory()
     {
-        return  $getallcategory = Category::with('products')->get('name');
+
+        $getallcategory = QueryBuilder::for(Category::class)
+        ->allowedFilters(['id'])
+        ->get();
+        // return  $getallcategory = Category::with('products')->get('name');
         // $getallcategory = Category::all();
-        // return $getallcategory;
+        return $getallcategory;
     }
 
     public function updatecategory($id, $data)

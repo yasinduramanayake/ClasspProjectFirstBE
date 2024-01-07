@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Schema;
 use App\ReviewRepositary\ReporitaryInterface;
 use App\ReviewRepositary\RepositaryImplementation;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**

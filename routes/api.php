@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -86,7 +86,8 @@ Route::delete('deleteorder{id}/',[OrderController::class,'delete']);
 
 
 
-
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
 
 
 
