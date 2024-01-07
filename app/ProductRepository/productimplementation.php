@@ -6,7 +6,6 @@ use App\Models\Product;
 
 class productimplementation implements productinterface
 {
-
     public function add($data)
     {
         return $createdata = Product::create($data);
@@ -19,7 +18,7 @@ class productimplementation implements productinterface
 
     public function index()
     {
-        return $alldata = Product::all();
+        return $alldata = Product::with('category')->get();
     }
 
     public function delete($id)

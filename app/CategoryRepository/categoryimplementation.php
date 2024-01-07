@@ -29,7 +29,7 @@ class categoryimplementation  implements categoryinterface
     }
     public function getallcategory()
     {
-        $getallcategory = Category::all();
+        $getallcategory = Category::with('products')->get();
         return $getallcategory;
     }
 
