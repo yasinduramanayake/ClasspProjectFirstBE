@@ -6,7 +6,6 @@ use App\Models\Product;
 
 class productimplementation implements productinterface
 {
-
     public function add($data)
     {
         return $createdata = Product::create($data);

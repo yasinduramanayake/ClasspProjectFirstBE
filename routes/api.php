@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -54,12 +55,12 @@ Route::get("getallcategory", [CategoryController::class, 'getallcategory',]);
 Route::put("updatecategory/{id}", [CategoryController::class, 'updatecategory',]);
 Route::delete("deletecategory/{id}", [CategoryController::class, 'deletecategory',]);
 
-Route::post('addusers',[
+Route::post('addusers', [
     UsersController::class,
     'store',
 ]);
 
-Route::get('allusers',[
+Route::get('allusers', [
     UsersController::class,
     'index',
 ]);
@@ -76,19 +77,18 @@ Route::put('deletereview/{id}', [
 ]);
 
 
-Route::post('addorder',[OrderController::class,'store']);
+Route::post('addorder', [OrderController::class, 'store']);
 
-Route::put('updateorder/{id}',[OrderController::class,'update']);
+Route::put('updateorder/{id}', [OrderController::class, 'update']);
 
-Route::get('allorder/',[OrderController::class,'index']);
+Route::get('allorder/', [OrderController::class, 'index']);
 
-Route::delete('deleteorder{id}/',[OrderController::class,'delete']);
+Route::delete('deleteorder{id}/', [OrderController::class, 'delete']);
 
 
+
+// authentication 
 
 Route::post('register', [AuthController::class, 'register']);
+
 Route::post('login', [AuthController::class, 'login']);
-
-
-
-

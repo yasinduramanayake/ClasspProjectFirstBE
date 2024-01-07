@@ -4,7 +4,7 @@ namespace App\ReviewRepositary;
 
 use App\ReviewRepositary\ReporitaryInterface;
 use App\Models\Reviews;
-
+use Spatie\QueryBuilder\QueryBuilder;
 
 class RepositaryImplementation  implements ReporitaryInterface
 {
@@ -17,8 +17,11 @@ class RepositaryImplementation  implements ReporitaryInterface
 
     public function index()
     {
-        $reviews =  Reviews::all();
-        return  $reviews;
+        $reviews = QueryBuilder::for(Reviews::class)
+            ->allowedFilters(['rating'])
+            ->get();
+
+        return $reviews;
     }
 
     public function update($id, $data)
